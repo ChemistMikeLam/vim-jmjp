@@ -8,8 +8,12 @@ endif
 setlocal indentexpr=JmjpIndent() 
 
 function! JmjpIndent() abort 
-	let l:line = getline(v:lnum) 
-	let l:prevLineNum = prevnonblank(v:lnum - 1) 
+	return JmjpCalcIndent(v:lnum) 
+endfunction 
+
+function! JmjpCalcIndent(lineNum) abort 
+	let l:line = getline(a:lineNum) 
+	let l:prevLineNum = prevnonblank(a:lineNum - 1) 
 	let l:prevLine = getline(l:prevLineNum) 
 	let l:prevLineIndent = indent(l:prevLineNum) 
 	let l:deltaIndent = JmjpNumUnbalDelim(l:prevLine) * &tabstop 
@@ -43,14 +47,16 @@ function! JmjpNumUnbalDelim(lineContent) abort
 			elseif l:workChar ==# '"' 
 				let l:instr = 0 
 			endif 
-		else 
-			if strridx('([', l:workChar) !=# -1 
-				let l:count = l:count + 1 
-			elseif strridx(')]', l:workChar) !=# -1 
-				let l:count = l:count - 1 
-			elseif l:workChar ==# '"' 
-				let l:inStr = 1 
+		elseif l:workChar ==# '/' 
+			if l:workLine[1] ==# '/' 
+				let l:length = -1 
 			endif 
+		elseif strridx('([', l:workChar) !=# -1 
+			let l:count = l:count + 1 
+		elseif strridx(')]', l:workChar) !=# -1 
+			let l:count = l:count - 1 
+		elseif l:workChar ==# '"' 
+			let l:inStr = 1 
 		endif 
 		let l:workLine = l:workLine[1:] 
 		let l:length = l:length - 1 
