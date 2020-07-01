@@ -12,7 +12,7 @@ function! JmjpIndent() abort
 	let l:prevLineNum = prevnonblank(v:lnum - 1) 
 	let l:prevLine = getline(l:prevLineNum) 
 	let l:prevLineIndent = indent(l:prevLineNum) 
-	let l:deltaIndent = JmjpNumUnbalDelim(l:prevLine) * &b:tabstop 
+	let l:deltaIndent = JmjpNumUnbalDelim(l:prevLine) * &tabstop 
 	let l:newIndent = l:prevLineIndent + l:deltaIndent 
 	if l:newIndent < 0 
 		return 0 
