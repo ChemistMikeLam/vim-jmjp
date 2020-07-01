@@ -1,0 +1,109 @@
+*jmjp.txt* Filetype plugin for Japanese mahjong paifu files 
+
+vim-jmjp
+
+A small filetype plugin for Japanese mahjong paifu files. 
+Includes syntax highlighting and indentation. 
+
+================================================================================
+CONTENTS                                                          *JmjpContents* 
+
+    1. Introduction ........... |JmjpIntro| 
+    2. Usage .................. |JmjpUsage| 
+    3. Configuration .......... |JmjpConfig| 
+       3.1 g:jmjpSynHlOff ..... |JmjpConfig_SynHlOff| 
+       3.2 g:jmjpIndentOff .... |JmjpConfig_IndentOff| 
+    4. License ................ |JmjpLicense| 
+    5. Bugs ................... |JmjpBugs| 
+    6. Contributing ........... |JmjpContrib| 
+    7. Changelog .............. |JmjpChangelog| 
+    8. Credits ................ |JmjpCredits| 
+
+================================================================================
+1. INTRODUCTION                                                      *JmjpIntro* 
+
+.jmjp files are files that record paifus of Japanese mahjong games. The format 
+of these files are specified in the standard found in the GitHub repository 
+
+	ChemistMikeLam/JapaneseMahjongPaifu 
+	https://github.com/ChemistMikeLam/JapaneseMahjongPaifu
+
+. This plugin aims to help the manual editing of these .jmjp files in vim by
+providing syntax highlighting and indentation support. 
+
+================================================================================
+2. USAGE                                                             *JmjpUsage* 
+
+Just put the files of this plugin under the corresponding directories under your 
+$VIMRUNTIME. Alternatively, if you use plugin managers, install this plugin as
+you would do so with any other vim plugins. 
+
+After installation, when you open .jmjp files in vim, vim should be able to
+detect the filetype and apply syntax highlighting and indentation support. 
+
+This plugin provides no additional commands or mappings. 
+
+================================================================================
+3. CONFIGURATION                                                    *JmjpConfig* 
+
+There are two variables that users can set to control the behaviour of this
+plugin. 
+
+--------------------------------------------------------------------------------
+3.1 g:jmjpSynHlOff                                         *JmjpConfig_SynHlOff* 
+                                                                *g:jmjpSynHlOff* 
+
+This variable controls if the syntax highlighting script of the plugin is used. 
+If you set this variable to something truthy, the syntax highlighting
+functionality of this plugin will be turned off. 
+
+--------------------------------------------------------------------------------
+3.2 g:jmjpIndentOff                                       *JmjpConfig_IndentOff* 
+                                                               *g:jmjpIndentOff* 
+
+This variable controls if the indentation script of the plugin is used. If you
+set this variable to something truthy, the indentation functionality of this
+plugin will be turned off. 
+
+================================================================================
+4. LICENSE                                                         *JmjpLicense* 
+
+All components of this plugin are released under the GPL v3.0 or later. A full
+text of te license should be attached in the plugin's top directory.
+Alternatively, you may find it at the following website: 
+	https://www.gnu.org/licenses/gpl-3.0.en.html
+
+================================================================================
+5. BUGS                                                               *JmjpBugs* 
+
+As far as I know, there is currently no bug in this plugin. 
+
+If you happen to find one, please report it by openning an issue in the GitHub
+repository of this plugin: 
+	ChemistMikeLam/vim-jmjp 
+	https://github.com/ChemistMikeLam/vim-jmjp 
+
+You may also request for new features using the above method, but such feature
+requests might not be responded quickly. 
+
+================================================================================
+6. CONTRIBUTING                                                    *JmjpContrib* 
+
+If you would like to contribute to bugfix / new feature etc, please open a pull
+request on GitHub. 
+
+================================================================================
+7. CHANGELOG                                                     *JmjpChangelog* 
+
+  Version   |                          Change 
+--------------------------------------------------------------------------------
+   1.0.0    | First version. Compatible with v1.0.0 of the .jmjp standard. 
+
+================================================================================
+8. CREDITS                                                         *JmjpCredits* 
+
+This plugin is originally written by Mike Lam (GitHub username ChemistMikeLam). 
+
+================================================================================
+                          --- END OF DOCUMENTATION ---
+================================================================================
